@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.services-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.service {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.service h3 {
+    padding: 15px;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.service p {
+    padding: 15px;
+    margin: 0;
+}
+
+.service p:last-child {
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.buy-now {
+    display: block;
+    margin: 15px auto;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buy-now:hover {
+    background-color: #45a049;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+</style>
+<body>
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="task-1.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="services" class="services-container">
+    <h2>Our Services</h2>
+
+    <div class="service">
+        <img src="portrait-photography.jpeg" alt="Portrait Photography">
+        <h3>Portrait Photography</h3>
+        <p>Capture beautiful moments with our professional portrait photography services. Perfect for individuals and families.</p>
+        <p>Price: $100/session</p>
+        <button class="buy-now" data-service="Portrait Photography" data-price="100">Buy Now</button>
+    </div>
+
+    <div class="service">
+        <img src="product-photography.jpeg" alt="Product Photography">
+        <h3>Product Photography</h3>
+        <p>Showcase your products in the best light with our high-quality product photography. Ideal for businesses and e-commerce.</p>
+        <p>Price: $150/session</p>
+        <button class="buy-now" data-service="Portrait Photography" data-price="150">Buy Now</button>
+    </div>
+
+    <div class="service">
+        <img src="event-photography.jpeg" alt="Event Photography">
+        <h3>Event Photography</h3>
+        <p>Capture the essence of your special events with our event photography services. Ideal for weddings, parties, and corporate events.</p>
+        <p>Price: $200/session</p>
+        <button class="buy-now" data-service="Portrait Photography" data-price="200">Buy Now</button>
+    </div>
+</section>
+
+<footer>
+    <div>
+        <p>Contact us at: info@Rathna.com</p>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const buyNowButtons = document.querySelectorAll('.buy-now');
+
+    buyNowButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const serviceName = this.getAttribute('data-service');
+            const price = parseFloat(this.getAttribute('data-price'));
+
+            // In a real application, you would initiate the payment process here (e.g., redirect to a payment gateway).
+            alert(`Thank you for your interest in ${serviceName}! Please proceed with the payment of $${price}.`);
+        });
+    });
+});
+
+</script>
+</body>
+</html>
